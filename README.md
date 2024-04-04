@@ -86,9 +86,7 @@ La primera visualización gráfica afectará gravemente a mi opinión sobre el c
 ---
 ### Anotaciones varias
 
-1. Crear un Component Menu
-2. Crear un Component Footer
-3. Crear un layout en routes con el Component Menu y el Component Footer
-4. Crear una ruta index con todos los pokemones de la API
-5. Crear carpeta pokemon con [name].tsx para poder buscar un pokemon en concreto
-6. Crear búsqueda pokemon como en el video 11 que se vaya actualizando con cada caracter que se escribe
+* index.tsx -> Página principal
+    - component que envuelva una lista de todos los pokemones
+        - 1. Un component y le pasas con un handler todos los pokemones
+        - 2. Una island en la que hacer una petición cuando carga. --> useEffect --> ruta api con un get a la api y hacer un fetch a la propia api
