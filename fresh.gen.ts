@@ -8,8 +8,10 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $api_getPokemones from "./routes/api/getPokemones.ts";
 import * as $index from "./routes/index.tsx";
 import * as $pokemon_name_ from "./routes/pokemon/[name].tsx";
+import * as $search from "./routes/search.tsx";
 import * as $Pokemon_All from "./islands/Pokemon_All.tsx";
 import * as $Pokemon_Item from "./islands/Pokemon_Item.tsx";
+import * as $Pokemon_Search from "./islands/Pokemon_Search.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,10 +22,12 @@ const manifest = {
     "./routes/api/getPokemones.ts": $api_getPokemones,
     "./routes/index.tsx": $index,
     "./routes/pokemon/[name].tsx": $pokemon_name_,
+    "./routes/search.tsx": $search,
   },
   islands: {
     "./islands/Pokemon_All.tsx": $Pokemon_All,
     "./islands/Pokemon_Item.tsx": $Pokemon_Item,
+    "./islands/Pokemon_Search.tsx": $Pokemon_Search,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
