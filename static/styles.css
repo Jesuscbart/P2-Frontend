@@ -19,19 +19,9 @@
   justify-content: space-around;
 }
 
-img.img-s {
-  width: 100px;
-  height: 100px;
-}
-
-img.img-m {
+img.PokemonImage {
   width: 200px;
   height: 200px;
-}
-
-img.img-l {
-  width: 300px;
-  height: 300px;
 }
 
 .PokemonName {
