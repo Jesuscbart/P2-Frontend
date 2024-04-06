@@ -2,7 +2,7 @@ import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Axios from "npm:axios";
 import { Pokemon } from "../../types.ts";
 
-import PokemonItem from "../../islands/PokemonItem.tsx";
+import Pokemon_Item from "../../islands/Pokemon_Item.tsx";
 
 // Creo un handler con un método GET que recibe un Request y un FreshContext con un parámetro de tipo Character
 export const handler: Handlers = {
@@ -36,7 +36,7 @@ export default function Page(props: PageProps<Pokemon>) {
     return (                        // Devuelvo el renderizado de la página con los datos del personaje
       
       <>
-       <PokemonItem _id={pokemon._id} name={pokemon.name} image={pokemon.image} sound={pokemon.sound}/>                                     
+       <Pokemon_Item _id={pokemon._id} name={pokemon.name} image={pokemon.image} sound={pokemon.sound}/>                                     
       </>
     );
   } catch (e) {

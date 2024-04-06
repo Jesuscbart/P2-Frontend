@@ -1,5 +1,3 @@
-
-
 import { FunctionComponent } from "preact";
 
 type PokemonProps = {
@@ -19,5 +17,3 @@ const PokemonComponent: FunctionComponent<PokemonProps> = (props) => {
 };
 
 export default PokemonComponent;
-
-
