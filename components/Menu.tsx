@@ -1,19 +1,19 @@
 import { FunctionComponent } from "preact";
 
 type MenuProps = {
-  selected: "List" | "Search" | "Add";
+  selected: "Pokemon_All" | "Pokemon_Search" | "Pokemon_Add";
 };
 
 const Menu: FunctionComponent<MenuProps> = ({ selected }) => {
   return (
     <div class="menu">
-      <a href="/" class={selected === "List" ? "selected" : ""}>
-        Listado Pokémon
+      <a href="/" class={selected === "Pokemon_All" ? "selected" : ""}>
+        Pokemones
       </a>
-      <a href="/search" class={selected === "Search" ? "selected" : ""}>
+      <a href="/search" class={selected === "Pokemon_Search" ? "selected" : ""}>
         Buscar Pokémon
       </a>
-      <a href="/add" class={selected === "Add" ? "selected" : ""}>
+      <a href="/add" class={selected === "Pokemon_Add" ? "selected" : ""}>
         Añadir Pokémon
       </a>
     </div>
