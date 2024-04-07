@@ -25,8 +25,8 @@ const Pokemon_Item: FunctionComponent<Pokemon> = (props) => {
     return (
     <div class="Pokemon_Item">
 
-        <h2 class="PokemonName"><a href={`/pokemon/${name}`}>{name}</a></h2>
-        <img src={image} class="PokemonImage" alt={`Image of the pokemon with id ${_id}`}/>
+        <h2 class="pokemonName"><a href={`/pokemon/${name}`}>{name}</a></h2>
+        <img src={image} class="pokemonImage" alt={`Image of the pokemon with id ${_id}`}/>
         <button class="SoundButton" onClick={PlaySound}>🔊</button>
         <audio id={`SonidoPokemon ${_id}`} src={sound}/>
         <button class="DeleteButton" onClick={Delete}>🗑️</button>

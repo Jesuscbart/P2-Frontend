@@ -5,24 +5,19 @@ import { Pokemon } from "../../../types.ts";
 export const handler: Handlers = {
     POST: async (req: Request, ctx: FreshContext) => {
         try {
-            const body = await req.json();
-            const pokemon = await Axios.post<Pokemon>(`https://lospoquimones.deno.dev/`, body);
+            const {name, image, sound, creator} = await req.json();
+            const pokemon = {name, image, sound, creator};
+            const response = await Axios.post<Pokemon>("https://lospoquimones.deno.dev", pokemon);
 
-            if (pokemon.status !== 201) {
-                throw new Error("No se pudo agregar el pokemon");
-            }
-
-            const pokemonData: Pokemon = pokemon.data;
-
-            return new Response(JSON.stringify(pokemonData), {
+            return new Response(JSON.stringify(response.data), {
                 headers: {
                     "content-type": "application/json",
                 },
             });
-
-        } catch (error) {
-            console.error(error);
-            throw new Error(error.message);
+        }
+        catch (error) {
+            console.error(error.response.data.message);
+            throw new Response(JSON.stringify(error.message), {status: 500});
         }
     }
 };

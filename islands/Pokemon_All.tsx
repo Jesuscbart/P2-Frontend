@@ -30,7 +30,7 @@ const Pokemon_All: FunctionComponent = () => {
 
     return (
         <div class="Pokemon_All">
-            <h1 class="mainTitle">Pokemones</h1>
+            <h1 class="pageTitle">Pokemones</h1>
             <div class="flex-row flex-around">
                 {pokemones.map((pk) => (
                     <Pokemon_Item {...pk} />

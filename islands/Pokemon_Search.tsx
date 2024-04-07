@@ -30,7 +30,7 @@ const Pokemon_Search: FunctionComponent = () => {
 
     return (
         <>
-            <h1 class="Titulo">Buscar Pokémon</h1>
+            <h1 class="pageTitle">Buscar Pokémon</h1>
             <div class="Pokemon_Search">
                 <label for = "Pokemon_Search">Nombre del Pokémon:</label>
                 <input type = "text" id = "Pokemon_Search" name = "Pokemon_Search" onInput={(event) => setName(event.currentTarget.value)}

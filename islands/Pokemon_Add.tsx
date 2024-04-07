@@ -14,11 +14,11 @@ export const Pokemon_Add: FunctionComponent = () => {
         setError("");
 
         if (!name || !image || !sound || !creator) {
-            setError("Por favor, llene todos los campos");
+            setError("Por favor, rellene todos los campos");
             return;
         }
 
-        const response = await fetch("/api/POST", {
+        const response = await fetch("/api/POST/addPokemon", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -42,24 +42,24 @@ export const Pokemon_Add: FunctionComponent = () => {
     return (
         <>
             <form class="Pokemon_Add" onSubmit={handleAdd}>
-                <h2 class="Titulo">Agregar Pokémon</h2>
+                <h2 class="pageTitle">Agregar Pokémon</h2>
                 <label>
-                    Nombre:
-                    <input type="text" value={name} onInput={(event) => setName(event.currentTarget.value)} autocomplete="off" />
+                    <p>Nombre</p>
+                    <input type="text" value={name} onInput={(event) => setName(event.currentTarget.value)} autocomplete="off" placeholder="Nombre" />
                 </label>
                 <label>
-                    Imagen:
-                    <input type="text" value={image} onInput={(event) => setImage(event.currentTarget.value)} autocomplete="off" />
+                    <p>Imagen</p>
+                    <input type="text" value={image} onInput={(event) => setImage(event.currentTarget.value)} autocomplete="off" placeholder="Link de la imagen" />
                 </label>
                 <label>
-                    Sonido:
-                    <input type="text" value={sound} onInput={(event) => setSound(event.currentTarget.value)} autocomplete="off" />
+                    <p>Sonido</p>
+                    <input type="text" value={sound} onInput={(event) => setSound(event.currentTarget.value)} autocomplete="off" placeholder="Link del audio" />
                 </label>
                 <label>
-                    Creador:
-                    <input type="text" value={creator} onInput={(event) => setCreator(event.currentTarget.value)} autocomplete="off" />
+                    <p>Creador</p>
+                    <input type="text" value={creator} onInput={(event) => setCreator(event.currentTarget.value)} autocomplete="off" placeholder="Nombre del creador" />
                 </label>
-                <button type="submit">Agregar</button>
+                <button type="submit">Añadir</button>
                 {error && <p class="Error">{error}</p>}
             </form>
         </>

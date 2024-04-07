@@ -19,12 +19,13 @@
   justify-content: space-around;
 }
 
-img.PokemonImage {
+img.pokemonImage {
   width: 200px;
   height: 200px;
+  border-radius: 10px;
 }
 
-.PokemonName {
+.pokemonName {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -38,19 +39,31 @@ img.PokemonImage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px;
+  margin-bottom: 20px;
   padding: 10px;
   width: 250px;
+  border-radius: 10px;
+
+
+  button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #94adff;
+    color: #000000;
+    font-size: 20px;
+  }
 }
 
 .Pokemon_Item:hover {
-  background-color: #f9f9f9;
+  background-color: #ededed;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.mainTitle {
+.pageTitle {
   text-align: center;
   font-size: 2em;
   margin: 20px;
@@ -58,38 +71,158 @@ img.PokemonImage {
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #6cb5ff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
 }
 
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.menu {
+/*Estilos del menú del layout*/
+.menu { 
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #333;
+  background-color: #23285c;
   color: #fff;
-}
+  border-radius: 10px;
 
-.menu a {
+  a {
   color: #fff;
   text-decoration: none;
   margin-right: 15px;
-}
+  }
 
-.menu a:last-child {
+  a:last-child {
   margin-right: 0;
+  }
+
+  a:hover {
+  color: #9e9e9e;
+  }
 }
 
-.menu a:hover {
-  color: #8f8585;
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .Titulo{
+    color: #ff0000; 
+    background: linear-gradient(to bottom left, #ff0000, #ff0000 15%, #ff0000); /* Cambiado a rojo */
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #ff0000;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .CloseButton{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #d9ff00;
+    color: #000000;
+    font-size: 20px;
+  }
+}
+
+.Pokemon_Search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+
+  label {
+    margin-bottom: 1em;
+  }
+
+  input {
+    padding: 0.5em;
+    font-size: 1em;
+    width: 20em;
+  }
+
+  button {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #208cff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+  button:hover {
+    background-color: #116fd3;
+  }
+
+  .Error {
+    color: #ac0000;
+    margin-top: 1em;
+  }
+}
+
+.Pokemon_Add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+
+.label {
+  margin-bottom: 1em;
+}
+
+input,
+select {
+  padding: 0.5em;
+  font-size: 1em;
+  width: 20em;
+  margin-bottom: 1em;
+}
+
+button {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #208cff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #116fd3;
+}
+
+
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Error {
+  color: #ac0000;
+  margin-top: 1em;
+}
 }
 
