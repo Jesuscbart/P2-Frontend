@@ -90,3 +90,7 @@ La primera visualización gráfica afectará gravemente a mi opinión sobre el c
     - component que envuelva una lista de todos los pokemones
         - 1. Un component y le pasas con un handler todos los pokemones
         - 2. Una island en la que hacer una petición cuando carga. --> useEffect --> ruta api con un get a la api y hacer un fetch a la propia api
+
+Hacer lo de coger datos de la api by name para el GET, DELETE y POST
+solucionar el search
+hacer el delete con el modal
