@@ -6,26 +6,26 @@ import {Pokemon} from "../types.ts"
 
 
 const Pokemon_Search: FunctionComponent = () => {
-    
+    // Variables de estado    
     const [name, setName] = useState<string>("");
     const [pokemon, setPokemon] = useState<Pokemon[] | null>(null);
     const [error, setError] = useState<string>("");
 
-    const handleSearch = async (event: Event) => {
-        event.preventDefault();
+    const handleSearch = async (event: Event) => {  // Función para buscar un pokémon
+        event.preventDefault(); // Previene el comportamiento por defecto del formulario
 
-        const response = await fetch(`/api/GET/${name}`);
+        const response = await fetch(`/api/GET/${name}`);   // Se envía una petición GET al servidor con el nombre del pokémon a buscar
 
-        const pokemon_data: Pokemon[] = await response.json();
+        const pokemon_data: Pokemon[] = await response.json();  // Se obtiene la respuesta del servidor
 
-        if (pokemon_data.length === 0) {
+        if (pokemon_data.length === 0) {    // Si no se ha encontrado el pokémon se muestra un mensaje de error
             setError(`No se encontró el pokemon ${name}`);
             setPokemon(null);
             return;
         }
 
-        setError("");
-        setPokemon(pokemon_data);
+        setError("");               // Limpia el mensaje de error
+        setPokemon(pokemon_data);   // Actualiza el estado de los pokemones con la respuesta del servidor
     };
 
     return (

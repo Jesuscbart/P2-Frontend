@@ -1,6 +1,6 @@
 import Axios from "npm:axios";
 import { Handlers } from "$fresh/server.ts";
-import {Pokemon} from "../../types.ts";
+import {Pokemon} from "../../../types.ts";
 
 export const handler: Handlers = {  // Handler con GET para obtener todos los pokemones de la API
 

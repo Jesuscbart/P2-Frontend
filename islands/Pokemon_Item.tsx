@@ -3,20 +3,19 @@ import {Pokemon} from "../types.ts"
 import { useState } from "preact/hooks";
 import Pokemon_Delete from "./Pokemon_Delete.tsx";
 
-const Pokemon_Item: FunctionComponent<Pokemon> = (props) => {    
+const Pokemon_Item: FunctionComponent<Pokemon> = (props) => {    // Función Pokemon_Item que recibe un objeto Pokemon
     const {_id, name, image, sound} = props;
-    const [deletePokemon, setDeletePokemon] = useState<boolean>(false);
+    const [deletePokemon, setDeletePokemon] = useState<boolean>(false); // Variable de estado deletePokemon que es un booleano
 
-
-    const Delete = () => {
+    const Delete = () => {  // Función para eliminar un pokémon
         setDeletePokemon(true);
     }
 
-    const Close = () => {
+    const Close = () => {   // Función para cerrar el modal de eliminación
         setDeletePokemon(false);
     }
 
-    const PlaySound = () => {
+    const PlaySound = () => {   // Función para reproducir el sonido del pokémon
         const sound = document.getElementById(`SonidoPokemon ${_id}`) as HTMLAudioElement;
         if(sound != null) sound.play();
     }
@@ -24,7 +23,6 @@ const Pokemon_Item: FunctionComponent<Pokemon> = (props) => {
 
     return (
     <div class="Pokemon_Item">
-
         <h2 class="pokemonName"><a href={`/pokemon/${name}`}>{name}</a></h2>
         <img src={image} class="pokemonImage" alt={`Image of the pokemon with id ${_id}`}/>
         <button class="SoundButton" onClick={PlaySound}>🔊</button>

@@ -8,8 +8,8 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $add from "./routes/add.tsx";
 import * as $api_DELETE_name_ from "./routes/api/DELETE/[name].tsx";
 import * as $api_GET_name_ from "./routes/api/GET/[name].tsx";
+import * as $api_GET_getPokemones from "./routes/api/GET/getPokemones.tsx";
 import * as $api_POST_addPokemon from "./routes/api/POST/addPokemon.tsx";
-import * as $api_getPokemones from "./routes/api/getPokemones.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $pokemon_name_ from "./routes/pokemon/[name].tsx";
 import * as $search from "./routes/search.tsx";
@@ -28,8 +28,8 @@ const manifest = {
     "./routes/add.tsx": $add,
     "./routes/api/DELETE/[name].tsx": $api_DELETE_name_,
     "./routes/api/GET/[name].tsx": $api_GET_name_,
+    "./routes/api/GET/getPokemones.tsx": $api_GET_getPokemones,
     "./routes/api/POST/addPokemon.tsx": $api_POST_addPokemon,
-    "./routes/api/getPokemones.tsx": $api_getPokemones,
     "./routes/index.tsx": $index,
     "./routes/pokemon/[name].tsx": $pokemon_name_,
     "./routes/search.tsx": $search,

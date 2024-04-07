@@ -1,5 +1,10 @@
+# Práctica 2
+
 ### Author: Jesús Cuesta Bartolomé
 ### Date: 2024/04/05
+### Link a la página: https://jesuscb-p2-frontend-cabecs2tgqmb.deno.dev
+
+----
 
 # API Endpoints
 
@@ -41,7 +46,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"name":"Charizard","image"
 
 curl -X DELETE -H "Content-Type: application/json" -d '{"creator":"Ash"}' http://localhost:3000/charizard
 
-
+----
 
 # Enunicado de la práctica
 
@@ -81,16 +86,3 @@ La página web se tendrá que desplegar en Deno deploy. En la entrega tendré qu
 Más avisos para caminantes, antes de ver nada de vuestro código abriré la página en mi navegador de confianza (el cuál no es netscape, tranquilos).
 
 La primera visualización gráfica afectará gravemente a mi opinión sobre el código que leeré Y EJECUTARÉ LOCALMENTE posteriormente.
-
-
----
-### Anotaciones varias
-
-* index.tsx -> Página principal
-    - component que envuelva una lista de todos los pokemones
-        - 1. Un component y le pasas con un handler todos los pokemones
-        - 2. Una island en la que hacer una petición cuando carga. --> useEffect --> ruta api con un get a la api y hacer un fetch a la propia api
-
-Hacer lo de coger datos de la api by name para el GET, DELETE y POST
-solucionar el search
-hacer el delete con el modal

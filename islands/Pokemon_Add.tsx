@@ -1,24 +1,23 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent } from "preact";
-import re from "https://esm.sh/v135/preact-render-to-string@6.3.1/X-ZS8q/denonext/preact-render-to-string.mjs";
 
 export const Pokemon_Add: FunctionComponent = () => {  
-    const [name, setName] = useState<string>("");
+    const [name, setName] = useState<string>("");           // Variables de estado
     const [image, setImage] = useState<string>("");
     const [sound, setSound] = useState<string>("");
     const [error, setError] = useState<string>("");
     const [creator, setCreator] = useState<string>("");
 
-    const handleAdd = async (event: Event) => {
-        event.preventDefault();
-        setError("");
+    const handleAdd = async (event: Event) => {            // Función para añadir un nuevo pokémon
+        event.preventDefault();                            // Previene el comportamiento por defecto del formulario
+        setError("");                                      // Limpia el mensaje de error
 
-        if (!name || !image || !sound || !creator) {
+        if (!name || !image || !sound || !creator) {            // Si no se han rellenado todos los campos se muestra un mensaje de error
             setError("Por favor, rellene todos los campos");
             return;
         }
 
-        const response = await fetch("/api/POST/addPokemon", {
+        const response = await fetch("/api/POST/addPokemon", {  // Se envía una petición POST al servidor con los datos del nuevo pokémon
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -26,20 +25,20 @@ export const Pokemon_Add: FunctionComponent = () => {
             body: JSON.stringify({ name, image, sound, creator }),
         });
 
-        const data = await response.json();
+        const data = await response.json();    // Se obtiene la respuesta del servidor
 
-        if (response.status !== 200) {
+        if (response.status !== 200) {       // Si la respuesta no es 200 (OK) se muestra un mensaje de error
             setError(data.message);
             return;
         }
 
-        setError(data);
+        setError(data);                     // Si todo ha ido bien se muestra un mensaje de éxito
         setTimeout(() => {
             location.reload();
         }, 500);
     };
 
-    return (
+    return (    // Formulario para añadir un nuevo pokémon
         <>
             <form class="Pokemon_Add" onSubmit={handleAdd}>
                 <h2 class="pageTitle">Agregar Pokémon</h2>

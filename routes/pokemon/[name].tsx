@@ -8,17 +8,15 @@ import Pokemon_Item from "../../islands/Pokemon_Item.tsx";
 export const handler: Handlers = {
   async GET(_req: Request, ctx: FreshContext<unknown, Pokemon>) {
     try {
-      const { name } = ctx.params;
-      const pokemon_req = await Axios.get<Pokemon[]>(`https://lospoquimones.deno.dev/${name}`);
+      const { name } = ctx.params;  // Se obtiene el nombre del pokémon a buscar
+      const pokemon_req = await Axios.get<Pokemon[]>(`https://lospoquimones.deno.dev/${name}`); // Se envía una petición GET al servidor con el nombre del pokémon a buscar
 
       if (pokemon_req.status !== 200) {  // Si no se encuentra el personaje, devuelvo un error
         throw new Error("No se ha encontrado el pokemon ${name}");
       }
-
       const pokemon = pokemon_req.data[0];  // Obtengo el personaje de los datos
 
-
-      return ctx.render(pokemon);
+      return ctx.render(pokemon); // Devuelvo el renderizado de la página con los datos del personaje
     } catch (e) {
       console.error(e);
       throw new Error("Ha habido un error");
@@ -33,13 +31,13 @@ export default function Page(props: PageProps<Pokemon>) {
 
   try {
 
-    return (                        // Devuelvo el renderizado de la página con los datos del personaje
+    return (     // Devuelvo el renderizado de la página con los datos del personaje
       
       <>
        <Pokemon_Item _id={pokemon._id} name={pokemon.name} image={pokemon.image} sound={pokemon.sound}/>                                     
       </>
     );
-  } catch (e) {
+  } catch (e) {  // Si ha habido un error, devuelvo un mensaje de error
     return <div>Ha habido un error</div>;
   }
 }
